@@ -35,6 +35,9 @@ const Navbar = () => {
                             <div className="flex space-x-4">
                                 {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
                                 <button className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</button>
+                                <button className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</button>
+                                <button className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</button>
+                                
                                 
                             </div>
                         </div>
@@ -51,3 +54,5 @@ export default Navbar;
 // 1. cr8 Navbar component
 // 2. edit Navbar with tailwindcss
 // 3. change a tag to button tag & cr8 for button home
+// 4. cr8 for button about including hover style
+// 5. cr8 for button contact including hover style
