@@ -68,7 +68,7 @@ const Navbar = () => {
               </div>
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
-                  {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
+                  {/* Home Navbar */}
                   <button
                     onClick={() => navigate('/')}
                     className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
@@ -76,13 +76,18 @@ const Navbar = () => {
                   >
                     Home
                   </button>
+                  {/* About Navbar */}
                   <button
                     onClick={() => navigate('/about')}
                     className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                   >
                     About
                   </button>
-                  <button className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
+                  {/* Contact Navbar */}
+                  <button
+                    onClick={() => navigate('/contact')}
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  >
                     Contact
                   </button>
                 </div>
@@ -106,3 +111,4 @@ export default Navbar;
 // 7. cr8 navigate variable with useNavigate()
 // 8. add onClick event to button home with navigate('/')
 // 9. add onClick event to button about with navigate('/about')
+// 10. add onClick event to button contact with navigate('/contact')
