@@ -1,5 +1,5 @@
 import './App.css';
-import { AboutContainer, HomeContainer } from './containers';
+import { AboutContainer, ContactContainer, HomeContainer } from './containers';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeContainer />} />
           <Route path="/about" element={<AboutContainer />} />
+          <Route path="/about" element={<ContactContainer />} />
           <Route path="*" element={<h1>404</h1>} />
         </Routes>
       </BrowserRouter>
@@ -29,3 +30,5 @@ export default App;
 // 8. cr8 route for 404 page if path not found
 // 9. import AboutContainer component
 // 10. render with cr8 route & pass in AboutContainer component
+// 11. import ContactContainer component
+// 12. render with cr8 route & pass in ContactContainer component
