@@ -1,15 +1,18 @@
 import './App.css';
 import { AboutContainer, ContactContainer, HomeContainer } from './containers';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import PublicLayout from './layouts/PublicLayout';
 
 function App() {
   return (
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomeContainer />} />
-          <Route path="/about" element={<AboutContainer />} />
-          <Route path="/contact" element={<ContactContainer />} />
+          <Route element={<PublicLayout />}>
+            <Route path="/" element={<HomeContainer />} />
+            <Route path="/about" element={<AboutContainer />} />
+            <Route path="/contact" element={<ContactContainer />} />
+          </Route>
           <Route path="*" element={<h1>404</h1>} />
         </Routes>
       </BrowserRouter>
@@ -32,3 +35,5 @@ export default App;
 // 10. render with cr8 route & pass in AboutContainer component
 // 11. import ContactContainer component
 // 12. render with cr8 route & pass in ContactContainer component
+// 13. import PublicLayout component
+// 14. add nested route with element PublicLayout component
