@@ -9,7 +9,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeContainer />} />
           <Route path="/about" element={<AboutContainer />} />
-          <Route path="/about" element={<ContactContainer />} />
+          <Route path="/contact" element={<ContactContainer />} />
           <Route path="*" element={<h1>404</h1>} />
         </Routes>
       </BrowserRouter>
