@@ -88,7 +88,7 @@ const HomeContainer = () => {
                 value={formMik.values.fullname}
                 onChange={formMik.handleChange('fullname')}
               />
-              {/* add error validation text with yup for input nama */}
+              {/* add error validation text with yup for input FullName */}
               {formMik.errors.fullname && (
                 <Text>{formMik.errors.fullname}</Text>
               )}
@@ -102,7 +102,7 @@ const HomeContainer = () => {
                 value={formMik.values.email}
                 onChange={formMik.handleChange('email')}
               />
-              {/* add error validation text with yup for input umur */}
+              {/* add error validation text with yup for input Email */}
               {formMik.errors.email && <Text>{formMik.errors.email}</Text>}
             </div>
             {/* Input Date of birth */}
@@ -114,7 +114,7 @@ const HomeContainer = () => {
                 value={formMik.values.date}
                 onChange={formMik.handleChange('date')}
               />
-              {/* add error validation text with yup for input hobi */}
+              {/* add error validation text with yup for input date */}
               {formMik.errors.date && <Text>{formMik.errors.date}</Text>}
             </div>
             {/* Button previous */}
