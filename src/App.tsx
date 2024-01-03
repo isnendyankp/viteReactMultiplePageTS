@@ -8,6 +8,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomeContainer />} />
+          <Route path="*" element={<h1>404</h1>} />
         </Routes>
       </BrowserRouter>
     </div>
@@ -23,4 +24,5 @@ export default App;
 // 4. import BrowserRouter, Routes, Route from react-router-dom
 // 5. wrap HomeContainer component with BrowserRouter
 // 6. wrap HomeContainer component with Routes
-// 7. pass HomeContainer component inside Route with path= "/" 
+// 7. pass HomeContainer component inside Route with path= "/"
+// 8. cr8 route for 404 page if path not found
