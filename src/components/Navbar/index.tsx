@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 const Navbar = () => {
     
     return (
@@ -36,9 +38,7 @@ const Navbar = () => {
                                 {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
                                 <button className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</button>
                                 <button className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</button>
-                                <button className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</button>
-                                
-                                
+                                <button className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</button>                       
                             </div>
                         </div>
                     </div>
@@ -56,3 +56,4 @@ export default Navbar;
 // 3. change a tag to button tag & cr8 for button home
 // 4. cr8 for button about including hover style
 // 5. cr8 for button contact including hover style
+// 6. import useNavigate from react-router-dom
