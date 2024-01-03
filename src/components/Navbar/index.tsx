@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+
+    const navigate = useNavigate();
     
     return (
        <nav className="bg-gray-800">
@@ -57,3 +59,4 @@ export default Navbar;
 // 4. cr8 for button about including hover style
 // 5. cr8 for button contact including hover style
 // 6. import useNavigate from react-router-dom
+// 7. cr8 navigate variable with useNavigate()
