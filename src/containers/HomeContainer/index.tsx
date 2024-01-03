@@ -1,4 +1,4 @@
-import { Input, Text, Button, Card, Navbar } from "../../components"
+import { Input, Text, Button, Card} from "../../components"
 import { useFormik } from "formik";
 import * as yup from 'yup';
 import { useState } from "react";
@@ -73,7 +73,6 @@ const HomeContainer = () => {
 
   return (
     <Card border={false} className=" ">
-      <Navbar />
       <Card border>
         {/* Step 1: Personal information = FullName, Email Address, Date of birth */}
 
@@ -322,4 +321,5 @@ export default HomeContainer
 // 69. add error validation text with yup for input password
 // 70. add Button previous @step 3 with add condition with handlePrevious function
 // 71. add Button submit @step 3 with add condition with handleNext function
-// 72. add navbar component to HomeContainer 
+// 72. add navbar component to HomeContainer
+// 73. remove Navbar cz already use nested route with element PublicLayout component
