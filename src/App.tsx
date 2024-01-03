@@ -4,9 +4,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="app">
-      <HomeContainer />
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <HomeContainer />
+      </div>
+    </BrowserRouter>
   );
 }
 
@@ -17,3 +19,4 @@ export default App;
 // 2. import HomeContainer component
 // 3. render with pass in HomeContainer component
 // 4. import BrowserRouter, Routes, Route from react-router-dom
+// 5. wrap HomeContainer component with BrowserRouter
