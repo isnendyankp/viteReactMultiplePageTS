@@ -6,6 +6,7 @@ const PublicLayout = () => {
     <div>
         <Navbar />
         <Outlet />
+        <div>Footer</div>
     </div>
   );
 }
@@ -16,6 +17,7 @@ export default PublicLayout;
 // 1. cr8 PublicLayout component
 // 2. import & render Navbar @PublicLayout component
 // 3. import & render Outlet @PublicLayout component
+// 4. add div footer @PublicLayout component
 
 // Explanation PublicLayout Component:
 // Outlets akan menandakan bahwa children dari layout tersebut akan di render di tempat outlet tersebut berada.
