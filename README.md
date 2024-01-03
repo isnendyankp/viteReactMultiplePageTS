@@ -2,6 +2,14 @@
 
 This project learn create Multiple Page with vitereact form typescript and this project also using tailwindcss, formik & yup validation.
 
+## Task
+
+1. Create 3 Pages: Register, Login & Category Page.
+- Category have: seet list category, save category, update category, delete category.
+2. Make sure all form category have validation.
+3. Please use ui library, any form library and yup.
+
+
 ## link project
 
 https://9dymultistepform.netlify.app/
