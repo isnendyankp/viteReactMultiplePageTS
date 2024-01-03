@@ -1,4 +1,4 @@
-import { Input, Text, Button, Card } from "../../components"
+import { Input, Text, Button, Card, Navbar } from "../../components"
 import { useFormik } from "formik";
 import * as yup from 'yup';
 import { useState } from "react";
@@ -73,6 +73,7 @@ const HomeContainer = () => {
 
   return (
     <Card border={false} className=" ">
+      <Navbar />
       <Card border>
         {/* Step 1: Personal information = FullName, Email Address, Date of birth */}
 
@@ -320,4 +321,5 @@ export default HomeContainer
 // 68. add onChange props to input with value formMik.handleChange('password')
 // 69. add error validation text with yup for input password
 // 70. add Button previous @step 3 with add condition with handlePrevious function
-// 71. add Button submit @step 3 with add condition with handleNext function 
+// 71. add Button submit @step 3 with add condition with handleNext function
+// 72. add navbar component to HomeContainer 
