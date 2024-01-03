@@ -4,13 +4,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <div className="app">
-          <HomeContainer />
-        </div>
-      </Routes>
-    </BrowserRouter>
+    <div className="app">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomeContainer />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
@@ -23,3 +23,4 @@ export default App;
 // 4. import BrowserRouter, Routes, Route from react-router-dom
 // 5. wrap HomeContainer component with BrowserRouter
 // 6. wrap HomeContainer component with Routes
+// 7. pass HomeContainer component inside Route with path= "/" 
