@@ -1,21 +1,24 @@
 import './App.css';
-import { AboutContainer, ContactContainer, HomeContainer } from './containers';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { LoginContainer, ListContainer, HomeContainer } from './containers';
 import PublicLayout from './layouts/PublicLayout';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      element: <PublicLayout />,
+      children: [
+        { path: '/', element: <HomeContainer /> },
+        { path: '/login', element: <LoginContainer /> },
+        { path: '/list', element: <ListContainer /> },
+      ],
+    },
+    { path: '*', element: <h1>404</h1> },
+  ]);
+
   return (
     <div className="app">
-      <BrowserRouter>
-        <Routes>
-          <Route element={<PublicLayout />}>
-            <Route path="/" element={<HomeContainer />} />
-            <Route path="/about" element={<AboutContainer />} />
-            <Route path="/contact" element={<ContactContainer />} />
-          </Route>
-          <Route path="*" element={<h1>404</h1>} />
-        </Routes>
-      </BrowserRouter>
+      <RouterProvider router={router} />
     </div>
   );
 }
