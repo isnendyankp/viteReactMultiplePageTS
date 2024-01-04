@@ -74,21 +74,21 @@ const Navbar = () => {
                     className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
                     aria-current="page"
                   >
-                    Home
+                    Register
                   </button>
-                  {/* About Navbar */}
+                  {/* login Navbar */}
                   <button
-                    onClick={() => navigate('/about')}
+                    onClick={() => navigate('/login')}
                     className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                   >
-                    About
+                    Login
                   </button>
-                  {/* Contact Navbar */}
+                  {/* List Navbar */}
                   <button
-                    onClick={() => navigate('/contact')}
+                    onClick={() => navigate('/list')}
                     className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                   >
-                    Contact
+                    List
                   </button>
                 </div>
               </div>
