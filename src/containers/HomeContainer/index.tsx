@@ -88,17 +88,8 @@ const HomeContainer = () => {
             {formMik.errors.password && <Text>{formMik.errors.password}</Text>}
           </div>
 
-          {/* Button previous */}
-          <Button
-            label={'Previous'}
-            onClick={handlePrevious}
-            type={'button'}
-            className={'bg-green-500'}
-          />
-
           {/* Button Submit */}
           <Button label={'Submit'} type={'submit'} className={'bg-green-500'} />
-          
         </form>
       </Card>
     </Card>
