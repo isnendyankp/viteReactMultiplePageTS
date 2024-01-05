@@ -3,26 +3,31 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 
 const HomeContainer = () => {
-
   // interface for form props
-    interface FormProps {
+  interface FormProps {
     email: string;
     name: string;
     password: string;
   }
 
-  // onSubmit function for submit form
+  // useFormik hook
+  const formMik = useFormik<FormProps>({
+    initialValues: {
+      email: '',
+      name: '',
+      password: '',
+    },
+
+    // onSubmit function for submit form
     onSubmit: async (values) => {
-     await fetch('https://mock-api.arikmpt.com/api/user/register', {
+      await fetch('https://mock-api.arikmpt.com/api/user/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(values),
-      }); 
+      });
     },
-
-    onSubmit: (values: FormProps) => console.log(values),
 
     // validation for username, email & password
     validationSchema: yup.object({
