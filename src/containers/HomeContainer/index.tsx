@@ -3,26 +3,22 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 
 const HomeContainer = () => {
- 
 
-  interface FormProps {
+  // interface for form props
+    interface FormProps {
     email: string;
     name: string;
     password: string;
   }
 
-  const formMik = useFormik({
+  // useFormik hook
+  const formMik = useFormik<FormProps>({
     initialValues: {
-      fullname: '',
       email: '',
-      date: '',
-      alamat: '',
-      kota: '',
-      negara: '',
-      kodepos: '',
-      username: '',
+      name: '',
       password: '',
     },
+    
     onSubmit: (values: FormProps) => console.log(values),
     validationSchema: yup.object({
       // step 1 validation
