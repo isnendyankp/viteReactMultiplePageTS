@@ -18,23 +18,16 @@ const HomeContainer = () => {
       name: '',
       password: '',
     },
-    
+
     onSubmit: (values: FormProps) => console.log(values),
+
+    // validation for username, email & password
     validationSchema: yup.object({
-      // step 1 validation
-      fullname: yup.string().required('Nama tidak boleh kosong'),
+      name: yup.string().required('name tidak boleh kosong'),
       email: yup
         .string()
         .email('Email tidak valid')
         .required('Email tidak boleh kosong'),
-      date: yup.string().required('Tanggal lahir tidak boleh kosong'),
-      // step 2 validation
-      alamat: yup.string().required('Alamat tidak boleh kosong'),
-      kota: yup.string().required('Kota tidak boleh kosong'),
-      negara: yup.string().required('Negara tidak boleh kosong'),
-      kodepos: yup.string().required('Kodepos tidak boleh kosong'),
-      // step 3 validation
-      username: yup.string().required('Username tidak boleh kosong'),
       password: yup
         .string()
         .min(8, 'Password minimal 8 karakter')
