@@ -4,25 +4,7 @@ import * as yup from 'yup';
 import { useState } from 'react';
 
 const HomeContainer = () => {
-  // cr8 useState for step
-  const [step, setStep] = useState<number>(1);
-
-  //  cr8 3 step for form
-  // cr8 function handleNext
-  const handleNext = () => {
-    if (step === 3) {
-      return;
-    }
-    setStep((prevState) => prevState + 1);
-  };
-
-  // cr8 function handlePrevious
-  const handlePrevious = () => {
-    if (step === 1) {
-      return;
-    }
-    setStep((prevState) => prevState - 1);
-  };
+ 
 
   interface FormProps {
     fullname: string;
