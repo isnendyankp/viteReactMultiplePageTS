@@ -46,50 +46,42 @@ const HomeContainer = () => {
   return (
     <Card border={false} className=" ">
       <Card border>
-          {/* // form element */}
-          <form onSubmit={formMik.handleSubmit}>
-            {/* Input Username */}
-            <div className="m-1">
-              <Text>{'Username'}</Text>
-              <Input
-                className="block border-emerald-700 border"
-                name={'username'}
-                value={formMik.values.username}
-                onChange={formMik.handleChange('username')}
-              />
-              {/* add error validation text with yup for input username */}
-              {formMik.errors.username && (
-                <Text>{formMik.errors.username}</Text>
-              )}
-            </div>
-            {/* Input Password */}
-            <div className="m-1">
-              <Text>{'Password'}</Text>
-              <Input
-                className="block border-emerald-700 border"
-                name={'password'}
-                value={formMik.values.password}
-                onChange={formMik.handleChange('password')}
-              />
-              {/* add error validation text with yup for input password */}
-              {formMik.errors.password && (
-                <Text>{formMik.errors.password}</Text>
-              )}
-            </div>
-            {/* Button previous */}
-            <Button
-              label={'Previous'}
-              onClick={handlePrevious}
-              type={'button'}
-              className={'bg-green-500'}
+        {/* form element */}
+        <form onSubmit={formMik.handleSubmit}>
+          {/* Input name */}
+          <div className="m-1">
+            <Text>{'name'}</Text>
+            <Input
+              className="block border-emerald-700 border"
+              name={'name'}
+              value={formMik.values.name}
+              onChange={formMik.handleChange('name')}
             />
-            {/* Button Submit */}
-            <Button
-              label={'Submit'}
-              type={'submit'}
-              className={'bg-green-500'}
+            {/* add error validation text with yup for input name */}
+            {formMik.errors.name && <Text>{formMik.errors.name}</Text>}
+          </div>
+          {/* Input Password */}
+          <div className="m-1">
+            <Text>{'Password'}</Text>
+            <Input
+              className="block border-emerald-700 border"
+              name={'password'}
+              value={formMik.values.password}
+              onChange={formMik.handleChange('password')}
             />
-          </form>
+            {/* add error validation text with yup for input password */}
+            {formMik.errors.password && <Text>{formMik.errors.password}</Text>}
+          </div>
+          {/* Button previous */}
+          <Button
+            label={'Previous'}
+            onClick={handlePrevious}
+            type={'button'}
+            className={'bg-green-500'}
+          />
+          {/* Button Submit */}
+          <Button label={'Submit'} type={'submit'} className={'bg-green-500'} />
+        </form>
       </Card>
     </Card>
   );
