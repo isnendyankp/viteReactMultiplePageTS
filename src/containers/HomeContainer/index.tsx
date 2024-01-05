@@ -7,14 +7,8 @@ const HomeContainer = () => {
  
 
   interface FormProps {
-    fullname: string;
     email: string;
-    date: string;
-    alamat: string;
-    kota: string;
-    negara: string;
-    kodepos: string;
-    username: string;
+    name: string;
     password: string;
   }
 
