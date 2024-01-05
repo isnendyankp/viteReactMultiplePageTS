@@ -11,12 +11,15 @@ const HomeContainer = () => {
     password: string;
   }
 
-  // useFormik hook
-  const formMik = useFormik<FormProps>({
-    initialValues: {
-      email: '',
-      name: '',
-      password: '',
+  // onSubmit function for submit form
+    onSubmit: async (values) => {
+     await fetch('https://mock-api.arikmpt.com/api/user/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      }); 
     },
 
     onSubmit: (values: FormProps) => console.log(values),
