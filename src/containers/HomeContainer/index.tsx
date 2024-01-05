@@ -60,18 +60,34 @@ const HomeContainer = () => {
             {/* add error validation text with yup for input name */}
             {formMik.errors.name && <Text>{formMik.errors.name}</Text>}
           </div>
+
+          {/* Input Email */}
+          <div className="m-1">
+            <Text>{'Email'}</Text>
+            <Input
+              className="block border-emerald-700 border"
+              name={'email'}
+              value={formMik.values.email}
+              onChange={formMik.handleChange('email')}
+            />
+            {/* add error validation text with yup for input email */}
+            {formMik.errors.email && <Text>{formMik.errors.email}</Text>}
+          </div>
+
           {/* Input Password */}
           <div className="m-1">
             <Text>{'Password'}</Text>
             <Input
               className="block border-emerald-700 border"
               name={'password'}
+              type={'password'}
               value={formMik.values.password}
               onChange={formMik.handleChange('password')}
             />
             {/* add error validation text with yup for input password */}
             {formMik.errors.password && <Text>{formMik.errors.password}</Text>}
           </div>
+
           {/* Button previous */}
           <Button
             label={'Previous'}
@@ -79,8 +95,10 @@ const HomeContainer = () => {
             type={'button'}
             className={'bg-green-500'}
           />
+
           {/* Button Submit */}
           <Button label={'Submit'} type={'submit'} className={'bg-green-500'} />
+          
         </form>
       </Card>
     </Card>
