@@ -12,7 +12,7 @@ This project learn create Multiple Page with vitereact form typescript and this 
 
 ## link project
 
-https://9dymultistepform.netlify.app/
+https://9dyregisterlogincrud.netlify.app/
 
 ## Create Project
 
