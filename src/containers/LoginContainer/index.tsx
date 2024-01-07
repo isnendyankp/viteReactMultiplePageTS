@@ -1,8 +1,12 @@
 import { Input, Text, Button, Card } from '../../components';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
+  // useNavigate hook
+  const navigate = useNavigate();
+
   // interface for form props
   interface FormProps {
     email: string;
@@ -38,6 +42,8 @@ const LoginPage = () => {
           // set token to local storage
           localStorage.setItem('token', data.data.token);
           console.log(data);
+          // navigate to list page
+          navigate('/list');
         }
       } catch (error) {
         // catch any network error or any error thrown in the fetch call
