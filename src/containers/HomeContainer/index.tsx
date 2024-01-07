@@ -1,9 +1,11 @@
 import { Input, Text, Button, Card} from "../../components"
 import { useFormik } from "formik";
 import * as yup from 'yup';
-
+import { useNavigate } from 'react-router-dom';
 
 const HomeContainer = () => {
+  // useNavigate hook
+  const navigate = useNavigate();
 
   // interface for form props
   interface FormProps {
@@ -30,6 +32,8 @@ const HomeContainer = () => {
         body: JSON.stringify(values),
       });
       console.log('success'); 
+      // navigate to login page
+      navigate('/login')
     },
 
     // validation for username, email & password
