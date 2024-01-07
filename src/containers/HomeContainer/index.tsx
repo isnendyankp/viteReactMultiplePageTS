@@ -1,8 +1,10 @@
-import { Input, Text, Button, Card } from '../../components';
-import { useFormik } from 'formik';
+import { Input, Text, Button, Card} from "../../components"
+import { useFormik } from "formik";
 import * as yup from 'yup';
 
+
 const HomeContainer = () => {
+
   // interface for form props
   interface FormProps {
     email: string;
@@ -20,13 +22,14 @@ const HomeContainer = () => {
 
     // onSubmit function for submit form
     onSubmit: async (values) => {
-      await fetch('https://mock-api.arikmpt.com/api/user/register', {
+     await fetch('https://mock-api.arikmpt.com/api/user/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(values),
       });
+      console.log('success'); 
     },
 
     // validation for username, email & password
@@ -43,6 +46,7 @@ const HomeContainer = () => {
     }),
   });
 
+  //  Render component
   return (
     <Card border={false} className=" ">
       <Card border>
@@ -94,6 +98,8 @@ const HomeContainer = () => {
       </Card>
     </Card>
   );
-};
+}
 
-export default HomeContainer;
+export default HomeContainer
+
+

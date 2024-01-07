@@ -1,66 +1,105 @@
-
-import { FormEvent, useState } from 'react';
-import axios from 'axios';
+import { Input, Text, Button, Card } from '../../components';
+import { useFormik } from 'formik';
+import * as yup from 'yup';
 
 const LoginPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // interface for form props
+  interface FormProps {
+    email: string;
+    password: string;
+  }
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
+  // useFormik hook
+  const formMik = useFormik<FormProps>({
+    initialValues: {
+      email: '',
+      password: '',
+    },
 
-    try {
-      const res = await axios.post(
-        'https://mock-api.arikmpt.com/api/user/login',
-        {
-          email,
-          password,
+    // onSubmit function for login form
+    onSubmit: async (values) => {
+      try {
+        const response = await fetch(
+          'https://mock-api.arikmpt.com/api/user/login',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(values),
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        } else {
+          // if response is ok, you can use it here
+          const data = await response.json();
+          // set token to local storage
+          localStorage.setItem('token', data.data.token);
+          console.log(data);
         }
-      );
-
-      if (res.data) {
-        // Handle successful login
+      } catch (error) {
+        // catch any network error or any error thrown in the fetch call
+        console.log(
+            'There has been a problem with your fetch operation: ' + (error as Error).message
+        );
       }
-    } catch (err) {
-      console.error(err);
-      // Show user that an error has occurred
-    }
-
-  };
+    },
+    
+    // validation for username, email & password
+    validationSchema: yup.object({
+      // name: yup.string().required('name tidak boleh kosong'),
+      email: yup
+        .string()
+        .email('Email tidak valid')
+        .required('Email tidak boleh kosong'),
+      password: yup
+        .string()
+        .min(8, 'Password minimal 8 karakter')
+        .required('Password tidak boleh kosong'),
+    }),
+  });
 
   return (
-    <div className="flex items-center justify-center my-24">
-      <form className="w-full max-w-sm" onSubmit={handleSubmit}>
-        <div className="md:flex md:items-center mb-6">
-          <input
-            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-            type="text"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="md:flex md:items-center mb-6">
-          <input
-            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div className="flex items-center justify-between">
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit"
-          >
-            Login
-          </button>
-        </div>
-      </form>
-    </div>
+    <Card border={false} className=" ">
+      <Card border>
+        {/* form element */}
+        <form onSubmit={formMik.handleSubmit}>
+
+          {/* Input Email */}
+          <div className="m-1">
+            <Text>{'Email'}</Text>
+            <Input
+              className="block border-emerald-700 border"
+              name={'email'}
+              value={formMik.values.email}
+              onChange={formMik.handleChange('email')}
+            />
+            {/* add error validation text with yup for input email */}
+            {formMik.errors.email && <Text>{formMik.errors.email}</Text>}
+          </div>
+
+          {/* Input Password */}
+          <div className="m-1">
+            <Text>{'Password'}</Text>
+            <Input
+              className="block border-emerald-700 border"
+              name={'password'}
+              type={'password'}
+              value={formMik.values.password}
+              onChange={formMik.handleChange('password')}
+            />
+            {/* add error validation text with yup for input password */}
+            {formMik.errors.password && <Text>{formMik.errors.password}</Text>}
+          </div>
+
+          {/* Button Login */}
+          <Button label={'Login'} type={'submit'} className={'bg-green-500'} />
+        </form>
+      </Card>
+    </Card>
   );
 };
 
 export default LoginPage;
-
