@@ -1,15 +1,11 @@
-
-import React from 'react'
+import React from 'react';
 import { useFormik } from 'formik';
-import { CreateCategoryData } from '../../Interfaces/category';
+import { CreateCategoryData } from '../../interfaces/Category'; // Fix for problem 1
 import { createCategory } from '../../api/categoryApi';
-import { CreateCategorySchema } from '../../validations/ValidationSchemas';
-import { Button, Text, Card} from "../../components"
-
-
+import { Button, Text, Card } from '../../components';
+import { CreateCategorySchema } from '../../validations/validationsSchemas';
 
 const CreateCategory: React.FC = () => {
-  const { CreateCategorySchema } = ValidationSchemas;
   const token = localStorage.getItem('token') ?? '';
 
   const formik = useFormik({
