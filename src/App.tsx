@@ -12,7 +12,7 @@ function App() {
         { path: '/', element: <HomeContainer /> },
         { path: '/login', element: <LoginContainer /> },
         { path: '/list', element: <ListContainer /> },
-        
+        { path: '/createCategory', element: <h1>Create Category</h1>}
       ],
     },
     { path: '*', element: <h1>404</h1> },
