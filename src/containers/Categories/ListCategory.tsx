@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { deleteCategory, getCategories } from '../../api/categoryApi';
 import { CategoryData } from '../../interfaces/Category';
 
-const ListContainer: React.FC = () => {
+const ListCategory: React.FC = () => {
   const token = localStorage.getItem('token') ?? '';
   const [categories, setCategories] = useState<CategoryData[]>([]);
 
@@ -87,4 +87,4 @@ const ListContainer: React.FC = () => {
   );
 };
 
-export default ListContainer;
+export default ListCategory;

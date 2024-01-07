@@ -1,6 +1,7 @@
 export { default as HomeContainer } from './HomeContainer';
 export { default as LoginContainer } from './LoginContainer';
-export { default as ListContainer } from './ListContainer';
+export { default as ListContainer } from './Categories/ListCategory';
+export { default as CategoryContainer } from './CategoryContainer';
 
 
 // Progress:
@@ -8,3 +9,4 @@ export { default as ListContainer } from './ListContainer';
 // 2. Add HomeContainer for container file distributor  @src/containers/index.ts
 // 3. Add LoginContainer for container file distributor  @src/containers/index.ts
 // 4. Add ListContainer for container file distributor  @src/containers/index.ts
+// 5. Add CategoryContainer for container file distributor  @src/containers/index.ts
