@@ -90,6 +90,13 @@ const Navbar = () => {
                   >
                     List
                   </button>
+                  {/* CreateCategory Navbar */}
+                  <button
+                    onClick={() => navigate('/createCategory')}
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  >
+                    Create Category
+                  </button>
                 </div>
               </div>
             </div>

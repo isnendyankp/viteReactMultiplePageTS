@@ -5,7 +5,7 @@ import { CategoryData } from '../../interfaces/Category';
 const ListContainer: React.FC = () => {
   const token = localStorage.getItem('token') ?? '';
   const [categories, setCategories] = useState<CategoryData[]>([]);
-
+  
   useEffect(() => {
     const fetchCategories = async () => {
       try {
