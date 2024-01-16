@@ -1,8 +1,7 @@
-import React from 'react'
 
 const EditCategory = () => {
   return (
-    <div>index</div>
+    <div>Edit Category page</div>
   )
 }
 
