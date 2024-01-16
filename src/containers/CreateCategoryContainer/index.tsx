@@ -4,13 +4,12 @@ import { CreateCategoryData } from '../../interfaces/Category';
 import { createCategory } from '../../api/categoryApi';
 import * as ValidationSchemas from '../../validations/validationsSchemas';
 import { Button, Text, Card } from '../../components';
-// import { useState } from "react";
-// import { userLogin } from './../../api/authApi';
-// import * as yup from"yup";
+import { useNavigate } from 'react-router-dom';
 
 const CreateCategory: React.FC = () => {
   const { CreateCategorySchema } = ValidationSchemas;
   const token = localStorage.getItem('token') ?? '';
+  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
@@ -24,6 +23,7 @@ const CreateCategory: React.FC = () => {
       } catch (error) {
         console.error(error);
       }
+      navigate('/list');
     },
   });
   return (

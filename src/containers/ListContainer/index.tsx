@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { deleteCategory, getCategories } from '../../api/categoryApi';
 import { CategoryData } from '../../interfaces/Category';
+import { useNavigate } from 'react-router-dom';
 
 const ListContainer: React.FC = () => {
   const token = localStorage.getItem('token') ?? '';
   const [categories, setCategories] = useState<CategoryData[]>([]);
+  const navigate = useNavigate();
   
   useEffect(() => {
     const fetchCategories = async () => {
@@ -28,6 +30,9 @@ const ListContainer: React.FC = () => {
     console.log(`edit category with ID: ${categoryId}`);
     console.log(categoryName);
     console.log(categoryStatus);
+
+    // Redirect to the edit page route
+    navigate(`/EditCategory`);
   };
 
   const handleDelete = async (categoryId: string) => {
