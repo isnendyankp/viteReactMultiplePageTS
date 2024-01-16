@@ -1,9 +1,8 @@
-import React from 'react'
 
-const EditCategory = () => {
+const editCategory = () => {
   return (
-    <div>index</div>
+    <div>editCategory</div>
   )
 }
 
-export default EditCategory
+export default editCategory

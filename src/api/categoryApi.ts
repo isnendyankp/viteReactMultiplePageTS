@@ -25,3 +25,15 @@ export const deleteCategory = async (categoryId: string, token: string) => {
     headers: { Authorization: `Bearer ${token}` },
   });
 };
+
+export const getCategory = async (categoryId: string, token: string) => {
+  return await axios.get(`${baseURL}/${categoryId}`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+};
+
+export const editCategory = async (categoryId: string, token: string) => {
+  return await axios.get(`${baseURL}/${categoryId}`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+};
