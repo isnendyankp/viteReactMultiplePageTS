@@ -18,6 +18,8 @@ interface FormProps {
 }
 
 const editCategory = () => {
+  // useNavigate hook
+  const navigate = useNavigate();
 
   // useState hook
   const [editingCategory, setEditingCategory] = useState<Category | null>(null);
