@@ -1,3 +1,4 @@
+import { useState } from 'react'
 
 // interface 
 interface Category {
@@ -7,9 +8,11 @@ interface Category {
 }
 
 const editCategory = () => {
-  
+
   // useState hook
   const [editingCategory, setEditingCategory] = useState<Category | null>(null);
+
+  //  Render component
   return (
     <div>editCategory</div>
   )
