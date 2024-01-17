@@ -28,9 +28,10 @@ const editCategory = () => {
 
   // useFormik hook
   const formMik = useFormik<FormProps>({
-    
-
-    
+    initialValues: {
+      name: editingCategory?.name ?? '',
+      is_active: editingCategory?.is_active ?? true,
+    },
   });
 
   //  Render component
