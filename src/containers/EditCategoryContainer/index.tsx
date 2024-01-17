@@ -46,6 +46,12 @@ const editCategory = () => {
       // navigate to list category page
       navigate('/list')
     },
+
+    // validationSchema for name & is_active
+    validationSchema: yup.object({
+      name: yup.string().required('name tidak boleh kosong'),
+      is_active: yup.boolean().required('is_active tidak boleh kosong'),
+    }),
   });
 
   //  Render component
