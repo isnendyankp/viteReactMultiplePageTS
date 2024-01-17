@@ -37,3 +37,9 @@ export const editCategory = async (categoryId: string, token: string) => {
     headers: { Authorization: `Bearer ${token}` },
   });
 };
+
+export const getCategoryById = async (categoryId: string, token: string) => {
+  return await axios.get(`${baseURL}/${categoryId}`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+};
