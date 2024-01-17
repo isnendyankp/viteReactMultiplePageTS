@@ -1,4 +1,5 @@
 
+// interface 
 interface Category {
   id: string;
   name: string;
@@ -6,6 +7,9 @@ interface Category {
 }
 
 const editCategory = () => {
+  
+  // useState hook
+  const [editingCategory, setEditingCategory] = useState<Category | null>(null);
   return (
     <div>editCategory</div>
   )
