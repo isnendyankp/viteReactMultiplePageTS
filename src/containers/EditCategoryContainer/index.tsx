@@ -7,6 +7,12 @@ interface Category {
   is_active: boolean;
 }
 
+// interface for form props
+interface FormProps {
+  name: string;
+  is_active: boolean;
+}
+
 const editCategory = () => {
 
   // useState hook
@@ -19,6 +25,13 @@ const editCategory = () => {
       setEditingCategory(data);
     })();
   }, [id]);
+
+  // useFormik hook
+  const formMik = useFormik<FormProps>({
+    
+
+    
+  });
 
   //  Render component
   return (
