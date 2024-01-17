@@ -35,6 +35,14 @@ const editCategory = () => {
       name: editingCategory?.name ?? '',
       is_active: editingCategory?.is_active ?? true,
     },
+
+    // onSubmit function for submit form
+    onSubmit: async (values) => {
+      await axios.put(`https://mock-api.arikmpt.com/api/category/${id}`, values);
+      console.log('success');
+      // navigate to login page
+      navigate('/category')
+    },
   });
 
   //  Render component
