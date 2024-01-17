@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom';
 
 
 // interface 
@@ -40,8 +41,8 @@ const editCategory = () => {
     onSubmit: async (values) => {
       await axios.put(`https://mock-api.arikmpt.com/api/category/${id}`, values);
       console.log('success');
-      // navigate to login page
-      navigate('/category')
+      // navigate to list category page
+      navigate('/list')
     },
   });
 
