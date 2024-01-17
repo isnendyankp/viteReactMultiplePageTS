@@ -55,6 +55,32 @@ const editCategory = () => {
     }),
   });
 
+  // editCategory id
+  const editCategoryId = async (id: string) => {
+    try {
+            const response = await fetch(`https://mock-api.arikmpt.com/api/category/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': "application/json"
+                },
+                method: 'GET'
+            });
+    
+            if (response.ok) {
+                const responseData = await response.json();
+                const getCategory = responseData.data; // Access the nested 'data' property
+                console.log('editing category:', getCategory)
+                if (getCategory && typeof getCategory.is_active === 'boolean') {
+                    setEditingCategory(getCategory);
+                } else {
+                    console.error('Invalid category data:', getCategory);
+                } 
+            }
+        } catch (error) {
+            console.error('Error fetching category:', error);
+        }
+    };
+
   //  Render component
   return (
     <div>editCategory</div>
