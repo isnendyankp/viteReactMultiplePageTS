@@ -19,6 +19,14 @@ const UpdateForm: React.FC<UpdateCategoryFormProps> = ({
   onCancel,
   category,
 }) => {
+    const formik = useFormik({
+    initialValues: {
+      id: category.id,
+      name: category.name,
+      is_active: category.is_active,
+    },
+
+// render
   return (
     <div>index</div>
   )
