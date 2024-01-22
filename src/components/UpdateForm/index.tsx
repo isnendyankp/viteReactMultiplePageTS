@@ -14,7 +14,11 @@ interface UpdateCategoryFormProps {
 
 
 // component
-const UpdateForm = () => {
+const UpdateForm: React.FC<UpdateCategoryFormProps> = ({
+  onUpdateSuccess,
+  onCancel,
+  category,
+}) => {
   return (
     <div>index</div>
   )
