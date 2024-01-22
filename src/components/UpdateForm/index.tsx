@@ -1,9 +1,8 @@
-import React from 'react'
-
-const index = () => {
+// Purpose: Provide a form for updating a list category.
+const UpdateForm = () => {
   return (
     <div>index</div>
   )
 }
 
-export default index
+export default UpdateForm:
