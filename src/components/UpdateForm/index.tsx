@@ -54,8 +54,9 @@ const UpdateForm: React.FC<UpdateCategoryFormProps> = ({
 // render
   return (
         <Card border className="shadow-xl rounded-lg p-8">
+            {/* Form with formik */}
             <form onSubmit={formik.handleSubmit} className="space-y-4">
-                
+
             </form>
         </Card>
   )
