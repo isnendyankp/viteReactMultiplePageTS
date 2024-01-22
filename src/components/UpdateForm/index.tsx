@@ -57,6 +57,7 @@ const UpdateForm: React.FC<UpdateCategoryFormProps> = ({
         <Card border className="shadow-xl rounded-lg p-8">
             {/* Form with formik */}
             <form onSubmit={formik.handleSubmit} className="space-y-4">
+                {/* Name */}
                 <div>
                     <label htmlFor="name" className="block mb-1 font-bold">
                         Category Name
@@ -73,6 +74,26 @@ const UpdateForm: React.FC<UpdateCategoryFormProps> = ({
                     {formik.touched.name && formik.errors.name ? (
                         <div className="text-red-500 text-xs mt-1">
                         {formik.errors.name}
+                        </div>
+                    ) : null}
+                </div>
+
+                {/* Active */}
+                <div className="flex items-center space-x-2">
+                    <label htmlFor="is_active" className="font-bold">
+                        Is Active
+                    </label>
+                    <input
+                        type="checkbox"
+                        id="is_active"
+                        name="is_active"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        checked={formik.values.is_active}
+                    />
+                    {formik.touched.is_active && formik.errors.is_active ? (
+                        <div className="text-red-500 text-xs mt-1">
+                        {formik.errors.is_active}
                         </div>
                     ) : null}
                 </div>
