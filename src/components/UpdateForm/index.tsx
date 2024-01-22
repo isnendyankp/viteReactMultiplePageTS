@@ -2,6 +2,8 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { Card } from '../../components';
+
 // interface
 interface UpdateCategoryFormProps {
   onUpdateSuccess: () => void;
@@ -51,7 +53,9 @@ const UpdateForm: React.FC<UpdateCategoryFormProps> = ({
 
 // render
   return (
-    <div>index</div>
+        <Card border className="shadow-xl rounded-lg p-8">
+
+        </Card>
   )
 }
 
