@@ -20,12 +20,20 @@ const UpdateForm: React.FC<UpdateCategoryFormProps> = ({
   onCancel,
   category,
 }) => {
+
+    // formik
     const formik = useFormik({
     initialValues: {
       id: category.id,
       name: category.name,
       is_active: category.is_active,
     },
+
+    // validation
+    validationSchema: Yup.object({
+      name: Yup.string().required('Required'),
+      is_active: Yup.boolean().required('Required'),
+    }),
 
 // render
   return (
