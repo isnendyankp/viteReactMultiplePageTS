@@ -57,7 +57,19 @@ const UpdateForm: React.FC<UpdateCategoryFormProps> = ({
         <Card border className="shadow-xl rounded-lg p-8">
             {/* Form with formik */}
             <form onSubmit={formik.handleSubmit} className="space-y-4">
-
+                {/* Label and input for name */}
+                <label htmlFor="name" className="block mb-1 font-bold">
+                    Category Name
+                </label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.name}
+                    className="w-full px-2 py-1 border rounded"
+                />
             </form>
         </Card>
   )
