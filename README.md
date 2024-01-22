@@ -1,6 +1,6 @@
 # About Project
 
-This project learn create Multiple Page with vitereact form typescript and this project also using tailwindcss, formik & yup validation.
+This project learn create CRUD Project with vitereact form typescript and this project also using tailwindcss, formik & yup validation.
 
 ## Task
 
