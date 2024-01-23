@@ -39,4 +39,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
        localStorage.removeItem('token');
        setIsAuthenticated(false);
      };
+
+    // return AuthContext.Provider
+     return (
+       <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+         {children}
+       </AuthContext.Provider>
+     );
 }
