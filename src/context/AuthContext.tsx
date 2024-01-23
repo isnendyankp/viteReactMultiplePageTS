@@ -33,4 +33,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
        localStorage.setItem('token', token);
        setIsAuthenticated(true);
      };
+
+    // cr8 logout function
+     const logout = () => {
+       localStorage.removeItem('token');
+       setIsAuthenticated(false);
+     };
 }
