@@ -27,4 +27,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
          setIsAuthenticated(true);
        }
      }, []);
+
+    // cr8 login function
+     const login = (token: string) => {
+       localStorage.setItem('token', token);
+       setIsAuthenticated(true);
+     };
 }
