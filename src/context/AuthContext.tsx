@@ -17,4 +17,14 @@ const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+
+
+    // cr8 useEffect hook to check if token is stored in local storage
+     useEffect(() => {
+       // Cek apakah token tersimpan di local storage
+       const token = localStorage.getItem('token');
+       if (token) {
+         setIsAuthenticated(true);
+       }
+     }, []);
 }
