@@ -7,5 +7,9 @@ interface AuthContextProps {
   logout: () => void;
 }
 
+interface AuthProviderProps {
+  children: React.ReactNode; // Tambahkan tipe untuk children
+}
+
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
