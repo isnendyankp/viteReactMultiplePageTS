@@ -6,16 +6,14 @@ import * as yup from 'yup';
 
 
 // interface 
-interface Category {
-  id: string;
-  name: string;
-  is_active: boolean;
-}
-
-// interface for form props
-interface FormProps {
-  name: string;
-  is_active: boolean;
+interface UpdateCategoryFormProps {
+  onUpdateSuccess: () => void;
+  onCancel: () => void;
+  category: {
+    id: string;
+    name: string;
+    is_active: boolean;
+  };
 }
 
 const editCategory = () => {
