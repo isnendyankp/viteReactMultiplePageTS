@@ -47,3 +47,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
        </AuthContext.Provider>
      );
 }
+
+// cr8 custom hook useAuth untuk mengakses context dari komponen lain 
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
+};
