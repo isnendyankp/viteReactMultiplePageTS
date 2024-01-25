@@ -98,6 +98,20 @@ const EditCategory: React.FC<UpdateCategoryFormProps> = ({
           <div className="text-sm text-red-500">{formik.errors.is_active}</div>
         ) : null}
       </div>
+
+      {/* Buttons */}
+      <div className="flex space-x-2">
+        {/*  Cancel */}
+        <button
+          type="button"
+          onClick={onCancel}
+          className="px-4 py-2 font-bold text-white bg-blue-500 rounded"
+        >
+          Cancel
+        </button>
+        
+      </div>
+
     </form>
   );  
 };
