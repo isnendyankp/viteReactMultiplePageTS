@@ -62,7 +62,23 @@ const EditCategory: React.FC<UpdateCategoryFormProps> = ({
   return (
     // Form
     <form onSubmit={formik.handleSubmit} className="space-y-4">
-      <div>editCategory</div>;
+      <div>
+        <label htmlFor="name" className="block mb-1 font-bold">
+          Category Name
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.name}
+          className="w-full px-2 py-1 border rounded"
+        />
+        {formik.touched.name && formik.errors.name ? (
+          <div className="text-sm text-red-500">{formik.errors.name}</div>
+        ) : null}
+      </div>
     </form>
   );  
 };
