@@ -1,7 +1,8 @@
 import React from 'react';
-import { useAuth } from './../../context/AuthContext';
 import { useFormik } from 'formik';
-import * as yup from 'yup';
+import * as Yup from 'yup';
+import { useAuth } from './../../context/AuthContext';
+import { updateCategory } from '../../api/categoryApi';
 
 // interface
 interface UpdateCategoryFormProps {
@@ -19,8 +20,7 @@ const EditCategory: React.FC<UpdateCategoryFormProps> = ({
   onCancel,
   category,
 }) => {
-
-  // useAuth hook to get auth state and methods to sign in and sign out users 
+  // useAuth hook to get auth state and methods to sign in and sign out users
   const { isAuthenticated } = useAuth();
 
   //  Formik
@@ -118,7 +118,7 @@ const EditCategory: React.FC<UpdateCategoryFormProps> = ({
         </button>
       </div>
     </form>
-  );  
+  );
 };
 
 export default EditCategory;
