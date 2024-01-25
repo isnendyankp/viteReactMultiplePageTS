@@ -59,7 +59,12 @@ const EditCategory: React.FC<UpdateCategoryFormProps> = ({
   });
 
   //  Render component
-  return <div>editCategory</div>;
+  return (
+    // Form
+    <form onSubmit={formik.handleSubmit} className="space-y-4">
+      <div>editCategory</div>;
+    </form>
+  );  
 };
 
 export default EditCategory;
