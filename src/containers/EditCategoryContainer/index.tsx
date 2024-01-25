@@ -31,6 +31,12 @@ const EditCategory: React.FC<UpdateCategoryFormProps> = ({
       is_active: category.is_active,
     },
 
+    //  Yup validation
+    validationSchema: Yup.object({
+      name: Yup.string().required('Required'),
+      is_active: Yup.boolean().required('Required'),
+    }),
+
   //  Render component
   return <div>editCategory</div>;
 };
