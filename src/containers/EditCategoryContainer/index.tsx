@@ -62,6 +62,7 @@ const EditCategory: React.FC<UpdateCategoryFormProps> = ({
   return (
     // Form
     <form onSubmit={formik.handleSubmit} className="space-y-4">
+      {/* Name */}
       <div>
         <label htmlFor="name" className="block mb-1 font-bold">
           Category Name
@@ -77,6 +78,24 @@ const EditCategory: React.FC<UpdateCategoryFormProps> = ({
         />
         {formik.touched.name && formik.errors.name ? (
           <div className="text-sm text-red-500">{formik.errors.name}</div>
+        ) : null}
+      </div>
+
+      {/* Is Active */}
+      <div className="flex items-center space-x-2">
+        <label htmlFor="is_active" className="font-bold">
+          Is Active
+        </label>
+        <input
+          type="checkbox"
+          id="is_active"
+          name="is_active"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          checked={formik.values.is_active}
+        />
+        {formik.touched.is_active && formik.errors.is_active ? (
+          <div className="text-sm text-red-500">{formik.errors.is_active}</div>
         ) : null}
       </div>
     </form>
