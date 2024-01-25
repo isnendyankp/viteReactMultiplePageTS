@@ -25,40 +25,43 @@ const CreateCategory: React.FC = () => {
   });
   return (
     <>
-      <Card border className={'flex flex-wrap flex-col items-center'}>
-        <Card border={false}>
-          <h2 className="w-full text-xl bg-sky-400/[.9] text-white flex justify-center rounded-md">
-            Create Category
-          </h2>
+      <Card
+        border
+        className={
+          'flex flex-wrap flex-col items-center py-4 bg-white rounded-lg'
+        }
+      >
+        <h2 className="w-full text-2xl font-semibold text-gray-800 text-center my-2">
+          Create Category
+        </h2>
 
-          <Card border>
-            <form
-              onSubmit={formik.handleSubmit}
-              className=" h-[10rem] my-2 px-8 py-2 rounded-lg border-4 border-indigo-200 border-y-indigo-500 "
-            >
-              <div>
-                <Text>{'Nama'}</Text>
-                <input
-                  className="border-solid border-2 border-sky-500"
-                  type="text"
-                  id="name"
-                  name="name"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.name}
-                />
-                {formik.touched.name && formik.errors.name ? (
-                  <div>{formik.errors.name}</div>
-                ) : null}
-              </div>
-              <Button
-                label={'Create Category'}
-                type={'submit'}
-                className="w-full py-1 text-sm bg-green-400 opacity-90 mt-3"
-              />
-            </form>
-          </Card>
-        </Card>
+        <form
+          onSubmit={formik.handleSubmit}
+          className=" h-auto my-2 px-8 py-4 rounded-lg border border-indigo-200 bg-indigo-100 space-y-4"
+        >
+          <div>
+            <Text>{'Nama'}</Text>
+            <input
+              className="w-full p-2 border border-sky-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-400"
+              type="text"
+              id="name"
+              name="name"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.name}
+            />
+            {formik.touched.name && formik.errors.name ? (
+              <div className="text-red-500 text-sm">{formik.errors.name}</div>
+            ) : null}
+          </div>
+          <div className="flex justify-center">
+            <Button
+              label={'Create Category'}
+              type={'submit'}
+              className="w-full py-2 text-sm bg-green-400 hover:bg-green-500 focus:ring-green-500 focus:ring-offset-green-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none rounded-lg max-w-xs"
+            />
+          </div>
+        </form>
       </Card>
     </>
   );
