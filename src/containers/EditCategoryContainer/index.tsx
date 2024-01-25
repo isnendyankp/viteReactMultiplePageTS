@@ -1,11 +1,9 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios';
+import React from 'react';
+import { useAuth } from './../../context/AuthContext';
 import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 
-
-// interface 
+// interface
 interface UpdateCategoryFormProps {
   onUpdateSuccess: () => void;
   onCancel: () => void;
@@ -21,7 +19,9 @@ const EditCategory: React.FC<UpdateCategoryFormProps> = ({
   onCancel,
   category,
 }) => {
-  
+
+  // useAuth hook to get auth state and methods to sign in and sign out users 
+  const { isAuthenticated } = useAuth();
 
   //  Render component
   return <div>editCategory</div>;
