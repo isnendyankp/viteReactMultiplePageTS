@@ -37,6 +37,27 @@ const EditCategory: React.FC<UpdateCategoryFormProps> = ({
       is_active: Yup.boolean().required('Required'),
     }),
 
+    //  Handle submit
+    onSubmit: async (values) => {
+      try {
+        if (isAuthenticated) {
+          const token = localStorage.getItem('token');
+          if (token) {
+            await updateCategory(
+              values.id,
+              values.name,
+              values.is_active,
+              token
+            );
+            onUpdateSuccess();
+          }
+        }
+      } catch (error) {
+        console.error('Update category failed', error);
+      }
+    },
+  });
+
   //  Render component
   return <div>editCategory</div>;
 };
