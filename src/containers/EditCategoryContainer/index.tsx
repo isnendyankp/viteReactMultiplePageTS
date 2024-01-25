@@ -16,7 +16,11 @@ interface UpdateCategoryFormProps {
   };
 }
 
-const editCategory = () => {
+const EditCategory: React.FC<UpdateCategoryFormProps> = ({
+  onUpdateSuccess,
+  onCancel,
+  category,
+}) => {
   // useNavigate hook
   const navigate = useNavigate();
 
@@ -26,7 +30,9 @@ const editCategory = () => {
   // useEffect hook for edit category
   useEffect(() => {
     (async () => {
-      const { data } = await axios.get(`https://mock-api.arikmpt.com/api/category/${id}`);
+      const { data } = await axios.get(
+        `https://mock-api.arikmpt.com/api/category/${id}`
+      );
       setEditingCategory(data);
     })();
   }, [id]);
@@ -40,10 +46,13 @@ const editCategory = () => {
 
     // onSubmit function for submit form
     onSubmit: async (values) => {
-      await axios.put(`https://mock-api.arikmpt.com/api/category/${id}`, values);
+      await axios.put(
+        `https://mock-api.arikmpt.com/api/category/${id}`,
+        values
+      );
       console.log('success');
       // navigate to list category page
-      navigate('/list')
+      navigate('/list');
     },
 
     // validationSchema for name & is_active
@@ -56,33 +65,34 @@ const editCategory = () => {
   // editCategory id
   const editCategoryId = async (id: string) => {
     try {
-            const response = await fetch(`https://mock-api.arikmpt.com/api/category/${id}`, {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                    'Content-Type': "application/json"
-                },
-                method: 'GET'
-            });
-    
-            if (response.ok) {
-                const responseData = await response.json();
-                const getCategory = responseData.data; // Access the nested 'data' property
-                console.log('editing category:', getCategory)
-                if (getCategory && typeof getCategory.is_active === 'boolean') {
-                    setEditingCategory(getCategory);
-                } else {
-                    console.error('Invalid category data:', getCategory);
-                } 
-            }
-        } catch (error) {
-            console.error('Error fetching category:', error);
+      const response = await fetch(
+        `https://mock-api.arikmpt.com/api/category/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+          method: 'GET',
         }
-    };
+      );
+
+      if (response.ok) {
+        const responseData = await response.json();
+        const getCategory = responseData.data; // Access the nested 'data' property
+        console.log('editing category:', getCategory);
+        if (getCategory && typeof getCategory.is_active === 'boolean') {
+          setEditingCategory(getCategory);
+        } else {
+          console.error('Invalid category data:', getCategory);
+        }
+      }
+    } catch (error) {
+      console.error('Error fetching category:', error);
+    }
+  };
 
   //  Render component
-  return (
-    <div>editCategory</div>
-  )
-}
+  return <div>editCategory</div>;
+};
 
-export default editCategory
+export default EditCategory;
