@@ -23,6 +23,14 @@ const EditCategory: React.FC<UpdateCategoryFormProps> = ({
   // useAuth hook to get auth state and methods to sign in and sign out users 
   const { isAuthenticated } = useAuth();
 
+  //  Formik
+  const formik = useFormik({
+    initialValues: {
+      id: category.id,
+      name: category.name,
+      is_active: category.is_active,
+    },
+
   //  Render component
   return <div>editCategory</div>;
 };
